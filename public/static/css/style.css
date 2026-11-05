@@ -10,3 +10,11 @@
 .header-search {
     flex: 1 1 240px;
 }
+
+.avatar {
+    object-fit: cover;
+}
+
+.question-body {
+    min-width: 0;
+}
