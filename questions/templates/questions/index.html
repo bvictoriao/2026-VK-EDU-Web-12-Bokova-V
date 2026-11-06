@@ -1,0 +1,9 @@
+{% extends 'core/layout/base.html' %}
+{% block title %}Новые вопросы — Ask{% endblock %}
+{% block content %}
+    <div class="d-flex flex-wrap align-items-baseline gap-3 mb-3">
+        <h1 class="h3 mb-0">Новые вопросы</h1>
+        <a href="{% url 'questions:hot' %}">Популярные вопросы</a>
+    </div>
+    {% include 'questions/partials/question_list.html' %}
+{% endblock %}

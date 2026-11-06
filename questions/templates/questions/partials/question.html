@@ -1,0 +1,28 @@
+{% load static %}
+<article class="card mb-3">
+    <div class="card-body d-flex gap-3">
+        <div class="flex-shrink-0 text-center">
+            <img src="{% static 'core/img/avatar.svg' %}" alt="Аватар {{ obj.author }}"
+                 width="64" height="64" class="rounded avatar">
+            {% include 'questions/partials/vote.html' with obj=obj %}
+        </div>
+        <div class="question-body flex-grow-1">
+            {% if detailed %}
+                <h1 class="h3 card-title">{{ obj.title }}</h1>
+            {% else %}
+                <h2 class="h5 card-title"><a href="{% url 'questions:question' obj.id %}">{{ obj.title }}</a></h2>
+            {% endif %}
+            <p class="card-text text-muted text-break">{{ obj.text }}</p>
+            <div class="d-flex flex-wrap align-items-center gap-2 small">
+                <a href="{% url 'questions:question' obj.id %}#answers">Ответы ({{ obj.answer_count }})</a>
+                <span>Теги:</span>
+                {% for tag in obj.tags %}
+                    <a href="{% url 'questions:tag' tag %}" class="badge text-bg-secondary">{{ tag }}</a>
+                {% endfor %}
+                <time datetime="{{ obj.created_at|date:'c' }}" class="ms-auto text-muted">
+                    {{ obj.created_at|date:'j E Y, H:i' }}
+                </time>
+            </div>
+        </div>
+    </div>
+</article>

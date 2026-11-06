@@ -1,0 +1,56 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+{% block title %}Настройки профиля — Ask{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Настройки профиля</h1>
+<div class="row">
+    <div class="col-12 col-md-9">
+        <div class="alert alert-danger" role="alert">
+            Не удалось сохранить изменения. Исправьте ошибки в форме.
+        </div>
+        <form class="mb-4" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="profile-email" class="form-label">Email</label>
+                <input type="email" id="profile-email" name="email"
+                       class="form-control is-invalid" maxlength="254" required
+                       value="pepper@" autocomplete="email" aria-invalid="true"
+                       aria-describedby="profile-email-help profile-email-error">
+                <div id="profile-email-help" class="form-text">
+                    Укажите действующий адрес. Например: name@example.com.
+                </div>
+                <div id="profile-email-error" class="invalid-feedback">
+                    Введите корректный email.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="profile-nickname" class="form-label">Никнейм</label>
+                <input type="text" id="profile-nickname" name="nickname"
+                       class="form-control" maxlength="50" required
+                       value="Dr. Pepper" autocomplete="nickname"
+                       aria-describedby="profile-nickname-help">
+                <div id="profile-nickname-help" class="form-text">
+                    Имя, которое видят другие участники. Максимум 50 символов.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <p class="form-label">Текущая аватарка</p>
+                <img src="{% static 'core/img/avatar.svg' %}" alt="Текущая аватарка Dr. Pepper"
+                     width="96" height="96" class="rounded avatar mb-3">
+                <div>
+                    <label for="profile-avatar" class="form-label">Новая аватарка</label>
+                    <input type="file" id="profile-avatar" name="avatar"
+                           class="form-control" accept="image/png,image/jpeg"
+                           aria-describedby="profile-avatar-help">
+                    <div id="profile-avatar-help" class="form-text">
+                        Выберите PNG или JPEG. Оставьте поле пустым, чтобы сохранить текущую аватарку.
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary">Сохранить изменения</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

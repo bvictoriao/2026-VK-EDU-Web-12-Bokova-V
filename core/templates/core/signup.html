@@ -1,0 +1,81 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+{% block title %}Регистрация — Ask{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Регистрация</h1>
+<div class="row">
+    <div class="col-12 col-md-9">
+        <div class="alert alert-danger" role="alert">
+            Не удалось зарегистрироваться. Исправьте ошибки в форме.
+        </div>
+        <form class="mb-4" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="signup-login" class="form-label">Логин</label>
+                <input type="text" id="signup-login" name="login"
+                       class="form-control" maxlength="150" required
+                       autocomplete="username" aria-describedby="signup-login-help">
+                <div id="signup-login-help" class="form-text">
+                    Используется для входа. Максимум 150 символов.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="signup-email" class="form-label">Email</label>
+                <input type="email" id="signup-email" name="email"
+                       class="form-control is-invalid" maxlength="254" required
+                       value="example@" autocomplete="email" aria-invalid="true"
+                       aria-describedby="signup-email-help signup-email-error">
+                <div id="signup-email-help" class="form-text">
+                    Например: name@example.com.
+                </div>
+                <div id="signup-email-error" class="invalid-feedback">
+                    Введите корректный email.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="signup-nickname" class="form-label">Никнейм</label>
+                <input type="text" id="signup-nickname" name="nickname"
+                       class="form-control" maxlength="50" required
+                       autocomplete="nickname" aria-describedby="signup-nickname-help">
+                <div id="signup-nickname-help" class="form-text">
+                    Это имя будут видеть другие участники. Максимум 50 символов.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="signup-password" class="form-label">Пароль</label>
+                <input type="password" id="signup-password" name="password"
+                       class="form-control" minlength="8" maxlength="128" required
+                       autocomplete="new-password" aria-describedby="signup-password-help">
+                <div id="signup-password-help" class="form-text">
+                    От 8 до 128 символов.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="signup-password-repeat" class="form-label">Повторите пароль</label>
+                <input type="password" id="signup-password-repeat" name="password_repeat"
+                       class="form-control" minlength="8" maxlength="128" required
+                       autocomplete="new-password" aria-describedby="signup-repeat-help">
+                <div id="signup-repeat-help" class="form-text">
+                    Введите тот же пароль ещё раз.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="signup-avatar" class="form-label">Аватарка</label>
+                <input type="file" id="signup-avatar" name="avatar"
+                       class="form-control" accept="image/png,image/jpeg"
+                       aria-describedby="signup-avatar-help">
+                <div id="signup-avatar-help" class="form-text">
+                    Выберите изображение в формате PNG или JPEG.
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+        </form>
+        <p>Уже есть аккаунт? <a href="{% url 'core:login' %}">Войти</a></p>
+    </div>
+</div>
+{% endblock %}

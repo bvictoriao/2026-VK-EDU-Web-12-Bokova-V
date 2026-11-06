@@ -1,0 +1,6 @@
+{% extends 'core/layout/base.html' %}
+{% block title %}Вопросы по тегу {{ tag_name }} — Ask{% endblock %}
+{% block content %}
+    <h1 class="h3 mb-3 text-break">Вопросы по тегу: {{ tag_name }}</h1>
+    {% include 'questions/partials/question_list.html' %}
+{% endblock %}
