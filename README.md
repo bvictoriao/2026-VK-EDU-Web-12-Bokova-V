@@ -38,3 +38,23 @@ public/
     js/     # папка для скриптов, пока не используются
     img/    # локальные аватарка и favicon
 ```
+
+## Локальный запуск Django
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+Откройте http://127.0.0.1:8000/.
+
+Настройки для локальной разработки заданы по умолчанию. Чтобы переопределить
+их через окружение, скопируйте `.env.example` в `.env` и загрузите перед запуском:
+
+```bash
+set -a
+source .env
+set +a
+```
