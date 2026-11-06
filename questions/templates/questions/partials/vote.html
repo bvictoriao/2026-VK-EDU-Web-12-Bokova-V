@@ -1,0 +1,7 @@
+<div class="d-flex flex-column align-items-center gap-1 mt-2">
+    <button type="button" class="btn btn-sm btn-outline-success{% if obj.vote == 'like' %} active{% endif %}"
+            aria-label="Нравится" aria-pressed="{% if obj.vote == 'like' %}true{% else %}false{% endif %}">▲</button>
+    <span class="fw-bold">{{ obj.score }}</span>
+    <button type="button" class="btn btn-sm btn-outline-danger{% if obj.vote == 'dislike' %} active{% endif %}"
+            aria-label="Не нравится" aria-pressed="{% if obj.vote == 'dislike' %}true{% else %}false{% endif %}">▼</button>
+</div>

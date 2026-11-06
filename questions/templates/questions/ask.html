@@ -1,0 +1,52 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+{% block title %}Задать вопрос — Ask{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Задать вопрос</h1>
+<div class="alert alert-danger" role="alert">
+    Не удалось добавить вопрос. Исправьте ошибки в форме.
+</div>
+<form class="mb-4">
+    <div class="mb-3">
+        <label for="question-title" class="form-label">Заголовок</label>
+        <input type="text" id="question-title" name="title"
+               class="form-control is-invalid" maxlength="150" required
+               placeholder="Кратко сформулируйте вопрос"
+               aria-invalid="true" aria-describedby="title-help title-error">
+        <div id="title-help" class="form-text">
+            Максимум 150 символов.
+        </div>
+        <div id="title-error" class="invalid-feedback">
+            Введите заголовок вопроса.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="question-text" class="form-label">Текст вопроса</label>
+        <textarea id="question-text" name="text" class="form-control"
+                  rows="7" maxlength="5000" required
+                  aria-describedby="question-help"
+                  placeholder="Опишите проблему и то, что вы уже попробовали"></textarea>
+        <div id="question-help" class="form-text">
+            Добавьте подробности, чтобы участникам было проще помочь.
+            Максимум 5000 символов.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="question-tags" class="form-label">Теги</label>
+        <input type="text" id="question-tags" name="tags"
+               class="form-control is-invalid" maxlength="150"
+               value="python, django, html, css"
+               aria-invalid="true" aria-describedby="tags-help tags-error">
+        <div id="tags-help" class="form-text">
+            Укажите не более 3 тегов через запятую. Например: python, django.
+        </div>
+        <div id="tags-error" class="invalid-feedback">
+            Указано 4 тега. Оставьте не более 3.
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-success">Опубликовать вопрос</button>
+</form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Ask — вопросы и ответы{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'core/img/favicon.svg' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    {% include 'core/partials/header.html' %}
+    <div class="container">
+        <div class="row g-4">
+            <main class="col-12 col-lg-8">
+                {% block content %}{% endblock %}
+            </main>
+            {% include 'core/partials/sidebar.html' %}
+        </div>
+    </div>
+    {% include 'core/partials/footer.html' %}
+</body>
+</html>

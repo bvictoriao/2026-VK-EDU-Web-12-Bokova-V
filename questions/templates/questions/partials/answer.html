@@ -1,0 +1,21 @@
+{% load static %}
+<article class="card mb-3">
+    <div class="card-body d-flex gap-3">
+        <div class="flex-shrink-0 text-center">
+            <img src="{% static 'core/img/avatar.svg' %}" alt="Аватар {{ answer.author }}"
+                 width="64" height="64" class="rounded avatar">
+            {% include 'questions/partials/vote.html' with obj=answer %}
+        </div>
+        <div class="question-body flex-grow-1">
+            <h3 class="h6">{{ answer.author }}</h3>
+            <p class="card-text text-break">{{ answer.text }}</p>
+            <time datetime="{{ answer.created_at|date:'c' }}" class="d-block small text-muted mb-3">
+                {{ answer.created_at|date:'j E Y, H:i' }}
+            </time>
+            <button type="button" class="btn btn-sm btn-outline-success{% if answer.is_correct %} active{% endif %}"
+                    aria-pressed="{{ answer.is_correct|yesno:'true,false' }}">
+                {% if answer.is_correct %}✓ Правильный ответ{% else %}Отметить правильным{% endif %}
+            </button>
+        </div>
+    </div>
+</article>

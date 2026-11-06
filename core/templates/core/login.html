@@ -1,0 +1,41 @@
+{% extends 'core/layout/base.html' %}
+{% load static %}
+{% block title %}Вход — Ask{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">Вход</h1>
+<div class="row">
+    <div class="col-12 col-md-9">
+        <div class="alert alert-danger" role="alert">
+            Не удалось войти. Проверьте заполненные поля.
+        </div>
+        <form class="mb-4">
+            <div class="mb-3">
+                <label for="login-name" class="form-label">Логин</label>
+                <input type="text" id="login-name" name="login"
+                       class="form-control" maxlength="150" required
+                       autocomplete="username" aria-describedby="login-help">
+                <div id="login-help" class="form-text">
+                    Введите логин, указанный при регистрации.
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="login-password" class="form-label">Пароль</label>
+                <input type="password" id="login-password" name="password"
+                       class="form-control is-invalid" maxlength="128" required
+                       autocomplete="current-password" aria-invalid="true"
+                       aria-describedby="password-help password-error">
+                <div id="password-help" class="form-text">
+                    Введите пароль от своей учётной записи.
+                </div>
+                <div id="password-error" class="invalid-feedback">
+                    Введите пароль.
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary">Войти</button>
+        </form>
+        <p>Ещё нет аккаунта? <a href="{% url 'core:signup' %}">Зарегистрироваться</a></p>
+    </div>
+</div>
+{% endblock %}

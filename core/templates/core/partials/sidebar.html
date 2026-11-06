@@ -1,0 +1,20 @@
+<aside class="col-12 col-lg-4">
+                <section class="mb-4">
+                    <h2 class="h4">Popular tags</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="{% url 'questions:tag' 'python' %}" class="badge text-bg-primary">python</a>
+                        <a href="{% url 'questions:tag' 'django' %}" class="badge text-bg-success">django</a>
+                        <a href="{% url 'questions:tag' 'html' %}" class="badge text-bg-danger">html</a>
+                        <a href="{% url 'questions:tag' 'css' %}" class="badge text-bg-warning">css</a>
+                        <a href="{% url 'questions:tag' 'bootstrap' %}" class="badge text-bg-secondary">bootstrap</a>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="h4">Best members</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Mr. Freeman</a></li>
+                        <li><a href="#">Dr. House</a></li>
+                        <li><a href="#">Dr. Pepper</a></li>
+                    </ul>
+                </section>
+            </aside>

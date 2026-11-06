@@ -1,0 +1,15 @@
+{% extends 'core/layout/base.html' %}
+{% block title %}{{ question.title }} — Ask{% endblock %}
+{% block content %}
+    {% include 'questions/partials/question.html' with obj=question detailed=True %}
+    <section id="answers" aria-labelledby="answers-heading">
+        <h2 id="answers-heading" class="h4 mb-3">Ответы ({{ question.answer_count }})</h2>
+        {% for answer in answers %}
+            {% include 'questions/partials/answer.html' %}
+        {% empty %}
+            <p class="text-muted">Ответов пока нет.</p>
+        {% endfor %}
+        {% include 'core/partials/pagination.html' with pagination_label='Страницы ответов' %}
+    </section>
+    {% include 'questions/partials/answer_form.html' %}
+{% endblock %}
