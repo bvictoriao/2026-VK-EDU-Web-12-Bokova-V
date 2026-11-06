@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход — AskBokova</title>
+    <link rel="icon" type="image/svg+xml" href="static/img/favicon.svg">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="border-bottom mb-4">
+        <div class="container py-3 d-flex flex-wrap align-items-center gap-3">
+            <a href="index.html" class="logo">AskBokova</a>
+            <form class="header-search" role="search">
+                <input type="search" name="q" class="form-control"
+                       placeholder="Поиск" aria-label="Поиск">
+            </form>
+            <a href="ask.html" class="btn btn-success">Задать вопрос</a>
+            <div class="user-block ms-auto d-flex gap-2">
+                <a href="login.html" class="btn btn-outline-primary">Войти</a>
+                <a href="signup.html" class="btn btn-primary">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row g-4">
+            <main class="col-12 col-lg-8">
+                <h1 class="h3 mb-3">Вход</h1>
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="alert alert-danger" role="alert">
+                            Не удалось войти. Проверьте заполненные поля.
+                        </div>
+                        <form class="mb-4">
+                            <div class="mb-3">
+                                <label for="login-name" class="form-label">Логин</label>
+                                <input type="text" id="login-name" name="login"
+                                       class="form-control" maxlength="150" required
+                                       autocomplete="username" aria-describedby="login-help">
+                                <div id="login-help" class="form-text">
+                                    Введите логин, указанный при регистрации.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="login-password" class="form-label">Пароль</label>
+                                <input type="password" id="login-password" name="password"
+                                       class="form-control is-invalid" maxlength="128" required
+                                       autocomplete="current-password" aria-invalid="true"
+                                       aria-describedby="password-help password-error">
+                                <div id="password-help" class="form-text">
+                                    Введите пароль от своей учётной записи.
+                                </div>
+                                <div id="password-error" class="invalid-feedback">
+                                    Введите пароль.
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary">Войти</button>
+                        </form>
+                        <p>Ещё нет аккаунта? <a href="signup.html">Зарегистрироваться</a></p>
+                    </div>
+                </div>
+            </main>
+            <aside class="col-12 col-lg-4">
+                <section class="mb-4">
+                    <h2 class="h4">Popular tags</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="tag.html" class="badge text-bg-primary">python</a>
+                        <a href="tag.html" class="badge text-bg-success">django</a>
+                        <a href="tag.html" class="badge text-bg-danger">html</a>
+                        <a href="tag.html" class="badge text-bg-warning">css</a>
+                        <a href="tag.html" class="badge text-bg-secondary">bootstrap</a>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="h4">Best members</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Mr. Freeman</a></li>
+                        <li><a href="#">Dr. House</a></li>
+                        <li><a href="#">Dr. Pepper</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="border-top mt-auto py-3 bg-light">
+        <div class="container small text-muted">
+            © 2026 AskBokova — вопросы и ответы
+        </div>
+    </footer>
+</body>
+</html>
