@@ -8,7 +8,8 @@
 }
 
 .header-search {
-    flex: 1 1 240px;
+    flex: 1 1 100%;
+    min-width: 0;
 }
 
 .avatar {
@@ -17,4 +18,20 @@
 
 .question-body {
     min-width: 0;
+}
+
+.header-actions {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+    .header-search {
+        flex: 1 1 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .header-actions {
+        flex: 0 0 auto;
+    }
 }
