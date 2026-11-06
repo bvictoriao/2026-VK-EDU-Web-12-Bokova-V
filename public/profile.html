@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки профиля — AskBokova</title>
+    <link rel="icon" type="image/svg+xml" href="static/img/favicon.svg">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="border-bottom mb-4">
+        <div class="container py-3 d-flex flex-wrap align-items-center gap-3">
+            <a href="index.html" class="logo">AskBokova</a>
+            <form class="header-search" role="search">
+                <input type="search" name="q" class="form-control"
+                       placeholder="Поиск" aria-label="Поиск">
+            </form>
+            <a href="ask.html" class="btn btn-success">Задать вопрос</a>
+            <div class="user-block ms-auto d-flex align-items-center gap-2">
+                <img src="static/img/avatar.svg" alt="Аватар Dr. Pepper"
+                     width="48" height="48" class="rounded avatar">
+                <div class="small">
+                    <div class="fw-semibold">Dr. Pepper</div>
+                    <a href="profile.html">Настройки</a>
+                    <a href="index.html">Выйти</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row g-4">
+            <main class="col-12 col-lg-8">
+                <h1 class="h3 mb-3">Настройки профиля</h1>
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="alert alert-danger" role="alert">
+                            Не удалось сохранить изменения. Исправьте ошибки в форме.
+                        </div>
+                        <form class="mb-4" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="profile-email" class="form-label">Email</label>
+                                <input type="email" id="profile-email" name="email"
+                                       class="form-control is-invalid" maxlength="254" required
+                                       value="pepper@" autocomplete="email" aria-invalid="true"
+                                       aria-describedby="profile-email-help profile-email-error">
+                                <div id="profile-email-help" class="form-text">
+                                    Укажите действующий адрес. Например: name@example.com.
+                                </div>
+                                <div id="profile-email-error" class="invalid-feedback">
+                                    Введите корректный email.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="profile-nickname" class="form-label">Никнейм</label>
+                                <input type="text" id="profile-nickname" name="nickname"
+                                       class="form-control" maxlength="50" required
+                                       value="Dr. Pepper" autocomplete="nickname"
+                                       aria-describedby="profile-nickname-help">
+                                <div id="profile-nickname-help" class="form-text">
+                                    Имя, которое видят другие участники. Максимум 50 символов.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <p class="form-label">Текущая аватарка</p>
+                                <img src="static/img/avatar.svg" alt="Текущая аватарка Dr. Pepper"
+                                     width="96" height="96" class="rounded avatar mb-3">
+                                <div>
+                                    <label for="profile-avatar" class="form-label">Новая аватарка</label>
+                                    <input type="file" id="profile-avatar" name="avatar"
+                                           class="form-control" accept="image/png,image/jpeg"
+                                           aria-describedby="profile-avatar-help">
+                                    <div id="profile-avatar-help" class="form-text">
+                                        Выберите PNG или JPEG. Оставьте поле пустым, чтобы сохранить текущую аватарку.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <aside class="col-12 col-lg-4">
+                <section class="mb-4">
+                    <h2 class="h4">Popular tags</h2>
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="tag.html" class="badge text-bg-primary">python</a>
+                        <a href="tag.html" class="badge text-bg-success">django</a>
+                        <a href="tag.html" class="badge text-bg-danger">html</a>
+                        <a href="tag.html" class="badge text-bg-warning">css</a>
+                        <a href="tag.html" class="badge text-bg-secondary">bootstrap</a>
+                    </div>
+                </section>
+                <section>
+                    <h2 class="h4">Best members</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Mr. Freeman</a></li>
+                        <li><a href="#">Dr. House</a></li>
+                        <li><a href="#">Dr. Pepper</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="border-top mt-auto py-3 bg-light">
+        <div class="container small text-muted">
+            © 2026 AskBokova — вопросы и ответы
+        </div>
+    </footer>
+</body>
+</html>
